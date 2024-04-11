@@ -44,10 +44,10 @@ public class Security_config {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
-                // .requestMatchers("/security/admin")//after admin you can add  "/** " so that any url after that is accesable
-                // .hasRole("ADMIN")
-                // .requestMatchers("/security/user")
-                // .hasRole("USER")
+                .requestMatchers("/security/admin")//after admin you can add  "/** " so that any url after that is accesable
+                .hasRole("ADMIN")
+                .requestMatchers("/security/user")
+                .hasRole("USER")
                 .requestMatchers("/security/public")
                 .permitAll()
                 .anyRequest()
